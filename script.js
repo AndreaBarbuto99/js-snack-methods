@@ -1,32 +1,27 @@
-/*A partire da un array di stringhe, 
-crea un secondo array formattando le stringhe del primo array in minuscolo 
-e con l’iniziale maiuscola. */
+/* Crea un array di oggetti che rappresentano delle persone. Ogni persona ha un nome, un cognome e un’età.
+Crea quindi un nuovo array inserendo,
+ per ogni persona, una frase con il nome e cognome e l’indicazione se può guidare, in base all’età. */
 
-
-const parole = [
-  "CASA",        
-  "AlBum",       
-  "fiUme",       
-  "STELLA",      
-  "piano",       
-  "GaTtO",       
-  "LiBro",       
-  "MARE",        
-  "sole",        
-  "ViNo"         
+ const persone = [
+  { nome: "Mario", cognome: "Rossi", eta: 28 },
+  { nome: "Laura", cognome: "Bianchi", eta: 16 },
+  { nome: "Giovanni", cognome: "Verdi", eta: 42 },
+  { nome: "Sara", cognome: "Neri", eta: 17 },
+  { nome: "Luca", cognome: "Gialli", eta: 31 },
+  { nome: "Anna", cognome: "Blu", eta: 15 },
+  { nome: "Francesco", cognome: "Rossi", eta: 37 },
+  { nome: "Giulia", cognome: "Viola", eta: 19 },
+  { nome: "Alessandro", cognome: "Arancio", eta: 14 },
+  { nome: "Martina", cognome: "Grigio", eta: 33 }
 ];
 
-const paroleFormat = parole.map ((parola) => {
-   min = parola.toLowerCase();
-   return min.charAt(0).toUpperCase() + min.slice(1);
-});
+newString = persone.map((persona) => {
+    if(persona.eta >= 18) {
+        return (`${persona.nome} ${persona.cognome} ha ${persona.eta} anni e può guidare`);
+    }
+    else {
+        return (`${persona.nome} ${persona.cognome} ha ${persona.eta} anni e non può guidare`)
+    }
+})
 
-console.log(paroleFormat);
-
-// const capitalizedStrings = parole.map ((name) => {
-//     const firstLetter = name[0].toUpperCase();
-//     const otherLetter = name.substring(1).toLowerCase();
-//     return firstLetter + otherLetter;
-// })
-
-// console.log(capitalizedStrings)
+console.log( newString)
